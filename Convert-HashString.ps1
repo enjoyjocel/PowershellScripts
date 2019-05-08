@@ -5,6 +5,7 @@ Function Convert-HashString() {
     .DESCRIPTION
         Encrypts a string and exports it to a file.
         Decrypts a an encrypted string from a file and returns it in clear text
+        Good for when writing scripts and you want the API keys be written to a file for future use. 
     .EXAMPLE
         This command exports a string you input to c:\temp\*. If the file is existing, it will decrypt it and returns it in clear text
         Convert-HashString -Path c:\temp\App-ID.txt
