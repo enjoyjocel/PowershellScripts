@@ -11,7 +11,8 @@
 .OUTPUTS
     Output (if any)
 .NOTES
-    Usually goes as the first function of your script. 
+    Usually goes as the first function of your script.
+    You can copy the one liner below and just ommit this help section. Feel free to modify to your liking. :=`)
 #>
 
 $SN = $MyInvocation.MyCommand.Name; Function WL($LE) { $LN = (Get-Date -Format "MMddyy:HHmmss") + " - $LE"; $LN | Out-File -FilePath "$PSScriptRoot\$SN-log.txt" -Append -NoClobber -Encoding "Default"; $LN }
