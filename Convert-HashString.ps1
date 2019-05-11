@@ -27,23 +27,19 @@ Function Convert-HashString() {
         [Parameter()]
         [switch]$Overwrite
     )
-
     if ($Overwrite) {
         Read-Host "Enter the string you want hashed to $($Path)" -AsSecureString | ConvertFrom-SecureString | Out-File $Path
         $HashedFile = $Path
     }
     else { 
-
         if (!(Test-Path $Path)) {
             Read-Host "Enter the string you want hashed to $($Path)" -AsSecureString | ConvertFrom-SecureString | Out-File $Path
             $HashedFile = $Path
         }
-
         else {
             $HashedFile = $Path
         }
     }
-
     $HashedFile = Get-Content $Path | ConvertTo-SecureString
     $BinString = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($HashedFile)
     $ClearString = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BinString)
