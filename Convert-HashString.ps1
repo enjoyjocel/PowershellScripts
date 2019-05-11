@@ -33,7 +33,7 @@ Function Convert-HashString() {
     else { 
 
         if (!(Test-Path $Path)) {
-            Read-Host "Enter the string you want hashed to$($Path)" -AsSecureString | ConvertFrom-SecureString | Out-File $Path
+            Read-Host "Enter the string you want hashed to $($Path)" -AsSecureString | ConvertFrom-SecureString | Out-File $Path
             $HashedFile = $Path
         }
 
